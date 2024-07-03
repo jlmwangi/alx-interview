@@ -2,7 +2,9 @@ def pascal_triangle(n):
     """implementation of a pascals triangle given number of rows"""
     if n <= 0:
         return []
+
     triangle = []
+
     for i in range(n):
         row = [1]   # start each row with 1
         if triangle:   # if there ae previous rows
