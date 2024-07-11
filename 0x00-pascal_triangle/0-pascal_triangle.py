@@ -1,4 +1,7 @@
+#!/usr/bin/python3
 """ generate pascals triangle """
+
+
 def pascal_triangle(n):
     """implementation of a pascals triangle given number of rows"""
     if n <= 0:
