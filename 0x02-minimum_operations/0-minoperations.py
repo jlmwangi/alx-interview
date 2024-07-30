@@ -9,7 +9,7 @@ def minOperations(n):
         return 0
     if (n == 1):
         return 0  # no operations needed
-    
+
     operations = 0
     divisor = 2
 
