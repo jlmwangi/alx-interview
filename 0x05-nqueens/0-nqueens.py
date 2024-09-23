@@ -23,6 +23,7 @@ def is_safe(board, row, col):
 
     return True
 
+
 def backtrack_nqueens(board, col, result):
     '''solve nqueens using backtracking by trying
         to place queens one by one in columns'''
@@ -40,12 +41,14 @@ def backtrack_nqueens(board, col, result):
 
     return res
 
+
 def solve_nqueens(n):
     '''initialize the board and call backtrack to solve the problem'''
     board = [[0 for _ in range(n)] for _ in range(n)]
     result = []
     backtrack_nqueens(board, 0, result)
     return result
+
 
 def nqueens():
     '''caals the solver, parses args'''
@@ -64,6 +67,7 @@ def nqueens():
     solutions = solve_nqueens(n)
     for solution in solutions:
         print([[i, solution[i]] for i in range(n)])
+
 
 if __name__ == "__main__":
     nqueens()
