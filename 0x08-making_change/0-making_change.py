@@ -7,16 +7,19 @@ def makeChange(coins, total):
     count = 0
     if total <= 0:
         return 0
-    for coin in coins:
-        #  base case where a value of a coin is equal to the total
-        if coin == total:
-            count += 1
-            return count
-        # if not go through each coin, looking for one whose value is greter than the rest and subtract it from total
-        elif coin < total:
-            total = total - coin
-            count += 1
-        else:
-            return -1
-    return count
 
+    # sort coins in descending order to use larger coins first
+    coins.sort(reverse=True)
+
+    for coin in coins:
+        #  use as many coins of this denomination as possible
+        if total >= coin:
+            count += total // coin  # count no of coins of this type
+            total %= coin  # remaining total after using the coins
+
+        # if total becomes 0, no more coins needed
+        if total == 0:
+            return count
+
+    # return -1 if we exit loop and total still not equal to zero
+    return -1
