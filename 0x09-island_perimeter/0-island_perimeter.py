@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""function to calculate perimeter"""
 
 def island_perimeter(grid):
     """grid is a list of list of integers
