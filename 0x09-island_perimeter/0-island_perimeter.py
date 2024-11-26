@@ -8,18 +8,18 @@ def island_perimeter(grid):
     rows, cols = len(grid), len(grid[0])
     count = 0
 
-    '''go through each cell'''
     for i in range(rows):
+        '''go throu each cell'''
         for j in range(cols):
-            '''if we encounter a land cell, add 4'''
             if grid[i][j] == 1:
+                '''if we encounter a land cell, add 4'''
                 count += 4
 
-                '''if a land cell exists below current land cell'''
                 if i < rows - 1 and grid[i + 1][j] == 1:
+                    '''if a land ceell exists below current land cell'''
                     count -= 2
-                '''if a land cell exists to the right of curr land celi'''
                 if j < cols - 1 and grid[i][j + 1] == 1:
+                    '''if land cell exists to right of current land cell'''
                     count -= 2
 
     return count
